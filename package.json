@@ -1,0 +1,19 @@
+{
+  "name": "ohmyfood",
+  "version": "1.0.0",
+  "description": "projet P3",
+  "main": "index.js",
+  "scripts": {
+    "scripts": "sass --watch ./sass/main.scss:./public/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Verosam/VeroniqueNassour_3_30032021.git"
+  },
+  "author": "vn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Verosam/VeroniqueNassour_3_30032021/issues"
+  },
+  "homepage": "https://github.com/Verosam/VeroniqueNassour_3_30032021#readme"
+}

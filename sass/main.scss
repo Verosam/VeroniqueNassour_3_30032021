@@ -1,0 +1,63 @@
+@import "partials/balloon";
+@import "partials/car";
+@import "partials/hill";
+@import "partials/road";
+@import "partials/sun";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+
+body, html {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+	background: white;
+  padding:0;
+	margin:0;
+}
+
+$color-bckgrnd: rgba(30,30,30,0.20)
+$fs: 2rem
+$largr-photo: 150px
+
+.header {
+  width:100%;
+  background-color:$color-bckgrnd;
+  &__resa {
+    font-size: $fs;
+  }
+}
+
+.blocks .resto {
+  width: $larg-photo;
+  height: $largr-photo*0.74;
+}
+
+$progress-btn-dur: 1000ms
+$progress-btn-delay: 200ms
+
+.btn {
+  &:hover {
+    &> .progress__btnside {
+      animation-name: progress__btn;
+      animation-duration: $progress-btn-dur;
+      animation-delay: $progress-btn-delay;
+      animation-fill-mode: both;
+      transform-origin: right;
+    }
+  }
+}
+
+@keyframes progress__btnside {
+  0% {
+    transform: translateX(+999);
+  }
+
+  100% {
+    transform: translateX(-20%);
+  }
+}
