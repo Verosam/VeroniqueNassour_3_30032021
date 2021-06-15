@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+.car {
+  height: 60px;
+  width: 200px;
+  position: absolute;
+  bottom: 80px;
+  left: 10%;
+  background-image: URL("../images/car.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 99;
+}
+.car:hover {
+  cursor: pointer;
+}
+.car .wheel {
+  height: 32px;
+  width: 32px;
+  position: absolute;
+  bottom: -9px;
+  background-image: URL("../images/wheel.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.car .wheel.back {
+  left: 28px;
+}
+.car .wheel.front {
+  left: 155px;
+}
+
+body, html {
+  width: 375px;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  background: white;
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  width: 100%;
+}
+.header__logo img {
+  display: block;
+  margin: auto;
+  width: 44%;
+  padding: 20px 0;
+}
+
+.headeromf {
+  background-color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.headeromf__lieu {
+  padding: auto;
+  background-color: #d9d9d9;
+  font-size: 16px;
+}
+.headeromf #lieu {
+  border: none;
+  background-color: #d9d9d9;
+}
+
+.headeromf__resa {
+  padding-bottom: 30px;
+}
+.headeromf__resa__text1 {
+  margin-top: 30px;
+  margin-bottom: 0;
+  font-size: 22.4px;
+  font-weight: bold;
+}
+
+.headeromf__resa__text2 {
+  margin-top: 15px;
+  margin-bottom: 0;
+  font-size: 16px;
+}
+
+.btn {
+  padding: 15px;
+  background: linear-gradient(to bottom right, #ff7ad9, #9256dc);
+  color: white;
+  border: none;
+  border-radius: 30px;
+}
+
+.headeromf__fct {
+  font-size: 16px;
+  background-color: white;
+}
+.headeromf__fct p {
+  text-align: left;
+  font-size: 22.4px;
+  font-weight: bold;
+  padding-left: 10px;
+}
+.headeromf nav ul {
+  list-style-type: none;
+  position: left;
+}
+
+.btnrctg {
+  background-color: #f2f2f2;
+  padding: 20px 40px;
+  border-radius: 25px;
+  box-shadow: 0 2px 3px 1px;
+}
+
+.blocks .resto {
+  width: auto;
+  text-align: center;
+}
+.blocks .resto img {
+  width: 300px;
+  height: 222px;
+}
+
+.btn:hover > .progress__btnside {
+  animation-name: progress__btn;
+  animation-duration: 1000ms;
+  animation-delay: 200ms;
+  animation-fill-mode: both;
+  transform-origin: right;
+}
+
+@keyframes progress__btnside {
+  0% {
+    transform: translateX(999);
+  }
+  100% {
+    transform: translateX(-20%);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,51 +1,130 @@
-@import "partials/balloon";
 @import "partials/car";
-@import "partials/hill";
-@import "partials/road";
-@import "partials/sun";
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 
+$col1: hsl(267,66%,60%);
+$col2: hsl(317,100%,74%);
+$col3: hsl(165,56%,74%);
+$col3: hsl(0, 0%, 95%);
+$col4: black;
+$fontsz: 16px;
+$largrphoto: 300px;
+
 body, html {
-  width: 100%;
+  width: 375px;
   padding: 0;
   margin: 0;
 }
 
 body {
   font-family: 'Roboto', sans-serif;
+  font-size: $fontsz;
 	background: white;
   padding:0;
 	margin:0;
 }
 
-$color-bckgrnd: rgba(30,30,30,0.20)
-$fs: 2rem
-$largr-photo: 150px
-
 .header {
-  width:100%;
-  background-color:$color-bckgrnd;
-  &__resa {
-    font-size: $fs;
+  width: 100%;
+  &__logo img {  
+  display: block;
+  margin: auto;
+  width: 44%;
+  padding: 20px 0;
   }
 }
 
-.blocks .resto {
-  width: $larg-photo;
-  height: $largr-photo*0.74;
+.headeromf {
+  background-color: $col3;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+    &__lieu {
+    padding: auto;
+    background-color: darken($col3, 10%);
+    font-size: $fontsz;
+    }
+    #lieu {
+    border: none;
+    background-color: darken($col3, 10%);
+    }
 }
 
-$progress-btn-dur: 1000ms
-$progress-btn-delay: 200ms
+.headeromf {
+  &__resa {
+  padding-bottom: 30px;
+    &__text1 {
+    margin-top: 30px;
+    margin-bottom: 0;
+    font-size: $fontsz*1.4;
+    font-weight: bold;
+    }
+  }
+}
+  
+.headeromf__resa {
+    &__text2 {
+    margin-top: 15px;
+    margin-bottom: 0;
+    font-size: $fontsz;
+  }
+}
+
+.btn {
+  padding: 15px;
+  background: linear-gradient(to bottom right, $col2, $col1);
+  color: white;
+  border: none;
+  border-radius: 30px;
+}
+
+.headeromf {
+  &__fct {
+    font-size: $fontsz;
+    background-color: white;
+    p{
+    text-align: left;
+    font-size: $fontsz*1.4;
+    font-weight: bold;
+    padding-left: 10px;
+    }
+  }
+
+  nav ul {
+      list-style-type: none;
+      position: left;
+    }
+}
+
+.btnrctg {
+  background-color: $col3;
+  padding: 20px 40px;
+  border-radius: 25px;
+  box-shadow: 0 2px 3px 1px;
+}
+
+
+
+.blocks .resto {
+  width: auto;
+  text-align: center;
+  img {
+  width: $largrphoto;
+  height: $largrphoto*0.74;
+}
+}
+
+
+
+$progressbtndur: 1000ms;
+$progressbtndelay: 200ms;
 
 .btn {
   &:hover {
     &> .progress__btnside {
       animation-name: progress__btn;
-      animation-duration: $progress-btn-dur;
-      animation-delay: $progress-btn-delay;
+      animation-duration: $progressbtndur;
+      animation-delay: $progressbtndelay;
       animation-fill-mode: both;
       transform-origin: right;
     }
