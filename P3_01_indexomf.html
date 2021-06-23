@@ -4,20 +4,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<link rel="stylesheet" href="public/css/style.css" />
-		<link rel='stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" />
 		<title>Ohmyfood app</title>
 
 	</head>
 	<body>
-		<i class="fa-solid fa-circle-check"></i>
-		<i class="fa-solid fa-mobile-screen-button"></i>
-		<i class="fa-solid fa-list"></i>
-		<i class="fa-solid fa-store"></i>
-		<i class="fa-solid fa-utensils"></i>
-		<i class="fa-solid fa-handshake-angle"></i>
-		<i class="fa-thin fa-heart"></i>
-		<i class="fas fa-circle"></i>
-        <header>
+		
+        <header class="header">
 			<div class="header__logo">
 				<img src="images/logo/ohmyfood.png" alt="Logo ohmyfood" />
 			</div>
@@ -26,11 +19,7 @@
 				<form method="post" action="traitement.php">
 					<p>
 						<label for="lieu"><img src="images/map-marker-alt-solid.svg" class="menulieu" alt="Icone Map marker" /></label>
-						<select name="lieu" id="lieu">
-							<option value="Paris_Belleville" selected>Paris, Belleville</option>
-							<option value="Paris_Villette">Paris, La Villette</option>
-							<option value="Paris_Ternes">Paris, Ternes</option>
-						</select>
+						<input type="text" id="lieu" value="Paris, Belleville">
 					</p>
 					</form>
 				</div>	
@@ -52,11 +41,11 @@
 				<div class="headeromf__fct">
 					<p>Fonctionnement</p>
 					<nav>
-						<ul>
-							<li><a href="#P3_02_page1" class="fa-solid fa-mobile-screen-button btnrctg">Choisissez un restaurant</a></li>
-							<li><a href="#P3_03_page2" class="fa-solid fa-list btnrctg ">Composez votre menu</a></li>
-							<li><a href="#P3_04_page3" class="btnrctg">Dégustez au restaurant</a></li>
-						</ul>
+						<ol>
+							<li><a href="#P3_02_page1" class="btnrctg"><i class="fas fa-mobile-alt"></i>Choisissez un restaurant</a></li>
+							<li><a href="#P3_03_page2" class="btnrctg "><i class="fas fa-list-alt"></i>Composez votre menu</a></li>
+							<li><a href="#P3_04_page3" class="btnrctg"><i class="fas fa-store-alt"></i>Dégustez au restaurant</a></li>
+						</ol>
 					</nav>  
 				</div>                             
 			</div>
@@ -65,39 +54,35 @@
 		<section>
 			<h1>Restaurants</h1>
 				<div class="section__restos">
-					<a href="#pagea.html">
+					
 					<div class="section__restos__resto">
-						<img src="images/restaurants/la_palette_du_gout.jpg" alt="La palette du goût" />
-						<div class="btnheart">
-							<h2 class="nom1">La palette du goût</h2>
-							<h3 class="nom2">Ménilmontant</h3>
-						</div>
+						<a href="#pagea.html"><img src="images/restaurants/la_palette_du_gout.jpg" alt="La palette du goût" /></a>
+						<div class="btnheart"><i class="far fa-heart"></i></div>
+							<p><a class="nom1" href="#pagea.html">La palette du goût</a></p>
+							<p><a class="nom2" href="#pagea.html">Ménilmontant</a></p>
 					</div>
-					</a>
-
-					<a href="#">
-					<div class="section__restos__resto btnheart">
-						<img src="images/restaurants/la_note_enchantee.jpg" alt="La note enchantée" />
-						<h2 class="nom1">La note enchantée</h2>
-						<h3 class="nom2">Charonne</h3>
-					</div>
-					</a>
-
-					<a href="#">
+					
 					<div class="section__restos__resto">
-						<img src="images/restaurants/a_la_francaise.jpg" alt="A la française" />
-						<h2 class="nom1">A la française</h2>
-						<h3 class="nom2">Cité Rouge</h3>
+						<a href="#pagea.html"><img src="images/restaurants/la_note_enchantee.jpg" alt="La note enchantée" /></a>
+						<div class="btnheart"><i class="far fa-heart"></i></div>
+							<p><a class="nom1" href="#pagea.html">La note enchantée</a></p>
+							<p><a class="nom2" href="#pagea.html">Charonne</a></p>
 					</div>
-					</a>
-
-					<a href="#">
+					
 					<div class="section__restos__resto">
-						<img src="images/restaurants/le_delice_des_sens.jpg" alt="Le délice des sens" />
-						<h2 class="nom1">Le délice des sens</h2>
-						<h3 class="nom2">Folie-Méricourt</h3>
+						<a href="#pagea.html"><img src="images/restaurants/a_la_francaise.jpg" alt="A la francaise" /></a>
+						<div class="btnheart"><i class="far fa-heart"></i></div>
+							<p><a class="nom1" href="#pagea.html">A la française</a></p>
+							<p><a class="nom2" href="#pagea.html">Cité Rouge</a></p>
 					</div>
-					</a>
+
+					<div class="section__restos__resto">
+						<a href="#pagea.html"><img src="images/restaurants/le_delice_des_sens.jpg" alt="Le délice des sens" /></a>
+						<div class="btnheart"><i class="far fa-heart"></i></div>
+							<p><a class="nom1" href="#pagea.html">Le délice des sens</a></p>
+							<p><a class="nom2" href="#pagea.html">Folie-Méricourt</a></p>
+					</div>
+
 				</div>
 		</section>
 
@@ -106,8 +91,8 @@
 			<div class="footer__com">
 				<nav>
 					<ul>
-						<li class="footer__com__couvert"><a href="#propresto" >Proposer un restaurant</a></li>
-						<li class="footer__com__partner"><a href="#devpart" >Devenir partenaire</a></li>
+						<li class="footer__com__idea"><i class="fas fa-utensils"></i><a href="#propresto" >Proposer un restaurant</a></li>
+						<li class="footer__com__idea"><i class="fas fa-hands-helping"></i><a href="#devpart" >Devenir partenaire</a></li>
 					</ul>
 				</nav>  
 			</div>

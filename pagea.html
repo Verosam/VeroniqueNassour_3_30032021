@@ -4,15 +4,21 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<link rel="stylesheet" href="public/css/style.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" />
 		<title>Ohmyfood pageA</title>
 	</head>
 	<body>
         <header>
+            <div class="header">
+                <a href="#P3_01_indexomf.html"><i class="fas fa-arrow-left" alt="flech gauche"></i></a>
+				<p class="header__logo">ohmyfood</p>
+			</div>
+            </a>
             <div class="headpage">
 			<img src="images/restaurants/a_la_francaise.jpg" alt="phot resto alf" />
             <div class="headpage__titre"> 
                 <h1>A la Française</h1> 
-                <img src="images/heart-solid.svg" alt="icone coeur" />
+                <i class="far fa-heart"></i>
             </div>
         </header>
 		
@@ -20,17 +26,18 @@
             
 			<div class="catplat" >
                 <p class="catplat__titre">ENTREES</p>
-                <p class="catplat__soulignt">---------</p>
+                <hr><i class="fas fa-minus"></i></hr>
             </div>
             <div class="plats">
-                <a href="#">
                 <button class="btnpage btnanim">
                     <div class="plats__t1">Tartare de poulpe acidulé</div>
-                    <div class="plats__t2">Aux zestes d'orange</div>
-                    <div class="plats__prx">25€</div>
+                    <div class="bas__plats"></div>
+                        <div class="bas__plats__t2">Aux zestes d'orange</div>
+                        <div class="bas__plats__prx">25€</div>
+                    </div>
+                    <div class="progress__btnside"><i class="far fa-check-circle"></i></div>
                 </button>
-                </a>
-                
+                                
                 <a href="#">
                     <button class="btnpage btnanim">
                         <div class="plats__t1">Velouté de légumes d'antan</div>
@@ -108,6 +115,24 @@
             </div>    
             <button class="btndgd">Commander</button>
 		</section>
-
-
+        
+		<footer>
+			<h1>ohmyfood</h1>
+			<div class="footer__com">
+				<nav>
+					<ul>
+						<li class="footer__com__idea"><i class="fas fa-utensils"></i><a href="#propresto" >Proposer un restaurant</a></li>
+						<li class="footer__com__idea"><i class="fas fa-hands-helping"></i><a href="#devpart" >Devenir partenaire</a></li>
+					</ul>
+				</nav>  
+			</div>
+			<div class="footer__legal">
+				<nav>
+					<ul>
+						<li><a href="#">Mentions légales</a></li>
+						<li><a href="#">Contact</a></li>
+					</ul>
+				</nav>  
+			</div>
+		</footer>
 	</body>
