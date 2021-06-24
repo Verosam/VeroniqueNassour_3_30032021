@@ -342,4 +342,21 @@ footer h1 {
   height: 80px;
 }
 
+.plats {
+  animation: apparition 1000ms forward;
+  border: white;
+}
+
+@keyframes apparition {
+  0% {
+    transform: #fafafa;
+  }
+  17% {
+    transform: #d9d9d9;
+  }
+  100% {
+    transform: black;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */

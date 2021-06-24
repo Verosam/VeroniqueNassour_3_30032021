@@ -380,3 +380,22 @@ $progressbtndelay: 200ms;
   background-color: $col3;
   height: $btnhgt;
 }
+
+$apdur: 1000ms;
+
+.plats {
+  animation: apparition $apdur forward;
+  border: $col6;
+}
+
+@keyframes apparition {
+  0% {
+    transform: darken($col6, 2%);
+  }
+  17% {
+    transform: darken($col6, 15%)
+  }
+  100% {
+    transform: darken($col6, 100%)
+  }  
+}
