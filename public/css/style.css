@@ -76,6 +76,7 @@ body {
   color: white;
   border: none;
   border-radius: 30px;
+  width: 60%;
 }
 
 .headeromf__fct {
@@ -95,8 +96,23 @@ body {
     border: #9256dc;
   }
 }
+.headeromf nav ol {
+  list-style: none;
+  counter-reset: li;
+}
 .headeromf nav ol li {
   margin: 25px 0 55px 0;
+  counter-increment: li;
+}
+.headeromf nav ol li::before {
+  content: counter(li);
+  color: white;
+  display: inline-block;
+  background: #9256dc;
+  width: 22px;
+  border-radius: 50%;
+  margin-left: -15px;
+  margin-top: 21px;
 }
 .headeromf nav ol li i {
   padding-right: 15px;
@@ -112,7 +128,7 @@ body {
   box-shadow: 0 2px 3px 1px #bfbfbf;
 }
 .btnrctg:hover {
-  background-color: white;
+  background-color: #f1eafb;
 }
 .btnrctg:hover > .fas {
   color: #9256dc;
@@ -120,6 +136,7 @@ body {
 
 section {
   background-color: #f2f2f2;
+  padding-bottom: 10px;
 }
 section h1 {
   color: black;
@@ -128,6 +145,13 @@ section h1 {
   font-weight: bold;
   padding: 50px 0 25px 15px;
   margin: 0;
+}
+section .btncmd {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+  padding-bottom: 60px;
 }
 
 .section__restos {
@@ -169,15 +193,16 @@ section h1 {
 .section__restos__resto .btnheart {
   float: right;
   margin: 10px;
-  z-index: 0;
+  z-index: 1;
 }
-.section__restos__resto .btnheart:hover > .fa-heart {
-  opacity: 0.7;
+.section__restos__resto .btnheart:hover::after {
+  opacity: 0.8;
 }
-.section__restos__resto .btnheart .fa-heart {
+.section__restos__resto .btnheart::after {
+  content: url("fas fa-2x fa-heart");
   background: radial-gradient(circle, #ff94e1 0%, #772bd4 100%);
   opacity: 0.3;
-  z-index: 0;
+  z-index: -1;
   transition: opacity 200ms;
 }
 
@@ -223,11 +248,12 @@ footer h1 {
   font-size: 16px;
 }
 
-.header .fas {
+header .entete i {
   float: left;
   padding-left: 20px;
+  margin-top: 18px;
 }
-.header__logo {
+header .entete__logo {
   color: black;
   font-family: "Shrikhand", Arial, serif, sans-serif;
   font-size: 32px;
@@ -276,86 +302,93 @@ footer h1 {
   font-size: 18px;
   margin: 0;
 }
-.catplat__titre hr {
-  font-weight: bold;
+.catplat hr {
+  width: 40px;
+  float: left;
+  height: 4px;
   color: #98e2cf;
-}
-.catplat__titre .fas {
-  color: #98e2cf;
-}
-.catplat__soulignt {
-  font-weight: bold;
-  color: #98e2cf;
-  margin: 0;
+  background: #98e2cf;
 }
 
 .btnpage {
+  margin: 20px 3%;
+  display: flex;
+  flex-wrap: initial;
+  justify-content: space-between;
+  overflow: hidden;
   background-color: white;
   color: black;
   height: 80px;
-  padding: 20px 40px;
   border-radius: 25px;
   box-shadow: 0 2px 3px 1px #bfbfbf;
   text-decoration: none;
 }
 .btnpage:hover {
-  background-color: white;
+  background-color: #f1eafb;
 }
 
-.plats__t1 {
+.plats__nom {
+  padding: 12px 20px;
+  width: 90%;
+}
+.plats__nom__t1 {
   position: left;
   font-size: 19.2px;
   font-weight: bold;
 }
 
-.bas__plats {
+.plats__nom__bas {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
+  padding-top: 12px;
 }
-.bas__plats__plats__t2 {
-  font-size: 17.6px;
-  font-weight: bold;
+.plats__nom__bas__t2 {
+  font-size: 16px;
 }
-.bas__plats__plats__prx {
+.plats__nom__bas__prx {
   font-size: 16px;
   font-weight: bold;
 }
 
-.btnanim:hover > .progress__btnside {
-  animation-name: progress__btn;
-  animation-duration: 1000ms;
-  animation-delay: 200ms;
-  animation-fill-mode: both;
-  transform-origin: right;
+.btnanim:hover + i > .progress__btnside {
+  transform: translatex(0);
 }
 
-@keyframes progress__btn {
-  0% {
-    transform: translateX(999);
-  }
-  100% {
-    transform: translateX(-20%);
-  }
-}
 .progress__btnside {
   background-color: #98e2cf;
   height: 80px;
+  width: 70px;
+  border-radius: 0 25px 25px 0;
+  transform: translatex(-40px);
+  transform-origin: right 100%;
+  transition: transform 2000ms 500ms;
+}
+.progress__btnside i {
+  padding-top: 22px;
+  padding-left: 12px;
+  color: #ff7ad9;
+  transform: rotate(-2turn);
+  transition: transform 2000ms;
 }
 
 .plats {
-  animation: apparition 1000ms forward;
+  animation: apparition 2000ms ease-out 0s forward;
   border: white;
 }
 
 @keyframes apparition {
   0% {
-    transform: #fafafa;
+    transform: translateY(-20%);
+    opacity: 0;
   }
   17% {
-    transform: #d9d9d9;
+    transform: translateY(-10%);
+    opacity: 0.5;
   }
   100% {
-    transform: black;
+    transform: translateY(0%);
+    opacity: 1;
   }
 }
 

@@ -15,7 +15,7 @@ $col4: hsl(0, 0%, 95%);
 $col5: black;
 $col6: white;
 $col4shdw: darken($col4,20%);
-$col1light: lighten($col1,40%);
+$col1light: lighten($col1,35%);
 
 $fontsz: 16px;
 $largrphoto: 300px;
@@ -106,6 +106,7 @@ body {
   color: white;
   border: none;
   border-radius: 30px;
+  width: 60%;
 }
 
 .headeromf {
@@ -123,8 +124,21 @@ body {
 
   nav {
     ol {
+      list-style: none;
+      counter-reset: li;
       li {
       margin: 25px 0 55px 0;
+      counter-increment: li;
+        &::before {
+          content: counter(li);
+          color: white;
+          display: inline-block;
+          background: $col1;
+          width: 22px;
+          border-radius: 50%;
+          margin-left: -15px;
+          margin-top: 21px;
+        }
         i {
         padding-right: 15px;
         color: $col5;
@@ -133,7 +147,6 @@ body {
     }
   }
 }
-
 
 
 .btnrctg {
@@ -153,8 +166,16 @@ body {
 
 section {
   background-color: $col4;
+  padding-bottom: 10px;
   h1 {
     @include titleformat;
+  }
+  .btncmd {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 60px;
   }
 }
 
@@ -196,16 +217,17 @@ section {
   .btnheart {
     float: right;
     margin: 10px;
-    z-index: 0;
+    z-index: 1;
       &:hover {
-        &>.fa-heart {
-          opacity: 0.7;
+        &::after {
+          opacity: 0.8;
         }
       }
-    .fa-heart {
+    &::after {
+      content: url("fas fa-2x fa-heart");
       background: radial-gradient(circle, lighten($col2, 5)0%, darken($col1, 10) 100%);
       opacity: 0.3;
-      z-index: 0;
+      z-index: -1;
       transition: opacity 200ms;
       }
     }
@@ -250,11 +272,12 @@ footer {
   }
 }
 
-.header {
-  .fas {
+header .entete {
+  i {
     float: left;
     padding-left: 20px;
-  }
+    margin-top: 18px;
+    }
   &__logo {
     color: $col5;
     font-family: 'Shrikhand', Arial, serif, sans-serif;
@@ -303,26 +326,25 @@ footer {
   &__titre {
     font-size: 18px;
     margin: 0;
-    hr {
-      font-weight: bold;
-      color: $col3;
-    }
-    .fas {
-      color: $col3;
-    }
   }
-  &__soulignt {
-    font-weight: bold;
-    color: $col3;
-    margin: 0;
+  hr {
+      width: 40px;
+      float: left;
+      height: 4px;
+      color: $col3;
+      background: $col3;
   }
 }
 
 .btnpage {
+  margin: 20px 3%;
+  display: flex;
+  flex-wrap: initial;
+  justify-content: space-between;
+  overflow: hidden;
   background-color: $col6;
   color: $col5;
   height: $btnhgt;
-  padding: 20px 40px;
   border-radius: 25px;
   box-shadow: 0 2px 3px 1px $col4shdw;
   text-decoration: none;
@@ -331,71 +353,77 @@ footer {
   }
 }
 
-.plats__t1 {
-  position: left;
-  font-size: $fontsz*1.2;
-  font-weight: bold;
+.plats__nom {
+padding: 12px 20px;
+width: 90%;
+  &__t1 {
+    position: left;
+    font-size: $fontsz*1.2;
+    font-weight: bold;
+  }
 }
 
-.bas__plats {
+.plats__nom__bas {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  &__plats__t2 {
-  font-size: $fontsz*1.1;
-  font-weight: bold;
+  padding-top: 12px;
+  &__t2 {
+  font-size: $fontsz;
   }
-  &__plats__prx {
+  &__prx {
   font-size: $fontsz;
   font-weight: bold;
   }
 }
 
 
-$progressbtndur: 1000ms;
-$progressbtndelay: 200ms;
+$progressbtndur: 2000ms;
+$progressbtndelay: 500ms;
 
 .btnanim {
-  &:hover {
+  &:hover + i {
     &>.progress__btnside {
-      animation-name: progress__btn;
-      animation-duration: $progressbtndur;
-      animation-delay: $progressbtndelay;
-      animation-fill-mode: both;
-      transform-origin: right;
+      transform: translatex(0);
     }
-  }
-}
-
-@keyframes progress__btn {
-  0% {
-    transform: translateX(+999);
-  }
-
-  100% {
-    transform: translateX(-20%);
   }
 }
 
 .progress__btnside {
   background-color: $col3;
   height: $btnhgt;
+  width: 70px;
+  border-radius: 0  25px 25px 0;
+  transform: translatex(-40px);
+  transform-origin: right 100%;
+  transition: transform $progressbtndur $progressbtndelay;
+  i {
+    padding-top: 22px;
+    padding-left: 12px;
+    color: $col2;
+    transform: rotate(-2turn);
+    transition: transform $progressbtndur;
+  }
 }
 
-$apdur: 1000ms;
+$apdur: 2000ms;
 
 .plats {
-  animation: apparition $apdur forward;
+  animation: apparition $apdur ease-out 0s forward;
   border: $col6;
 }
 
 @keyframes apparition {
   0% {
-    transform: darken($col6, 2%);
+    transform: translateY(-20%);
+    opacity: 0;
   }
   17% {
-    transform: darken($col6, 15%)
+    transform: translateY(-10%);
+    opacity: 0.5;
   }
   100% {
-    transform: darken($col6, 100%)
+    transform: translateY(+0%);
+    opacity: 1;
   }  
 }
